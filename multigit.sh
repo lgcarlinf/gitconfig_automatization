@@ -25,24 +25,24 @@ create_ssh_key(){
 
 create_or_update_gitconfig_global(){
   cd ~
-  if [ -d "$directory_git" ]; then
+  if [ -f "$directory_git" ]; then
     echo "El directorio '$directory_git' ya existe"
     echo
     cat <<EOL >> "$directory_git"
 
-    [includeIf "gitdir:~/$name_work_directory/"]
-    path= ~/$name_work_directory/.gitconfig.$name_work_directory
+[includeIf "gitdir:~/$name_work_directory/"]
+  path= ~/$name_work_directory/.gitconfig.$name_work_directory
 EOL
   else
     touch "$directory_git"
     echo "El directorio '$directory_git' se creó correctamente"
     echo
     cat <<EOL >> "$directory_git"
-    [init]
-    defaultBranch = main
+[init]
+  defaultBranch = main
 
-    [includeIf "gitdir:~/$name_work_directory/"]
-    path= ~/$name_work_directory/.gitconfig.$name_work_directory
+[includeIf "gitdir:~/$name_work_directory/"]
+  path= ~/$name_work_directory/.gitconfig.$name_work_directory
 
 EOL
   fi
@@ -53,14 +53,14 @@ create_git_config_directory() {
   touch "$directory_git.$name_work_directory"
   cat <<EOL >> "$directory_git.$name_work_directory"
 
-  [user]
+[user]
   email = $email_user
   name = $name_user
 
-  [github]
+[github]
   user = "$user_github"
 
-  [core]
+[core]
   sshCommand = "ssh -i ~/.ssh/id_rsa_$name_work_directory"
 EOL
 
