@@ -34,7 +34,7 @@ create_or_update_gitconfig_global(){
     path= ~/$name_work_directory/.gitconfig.$name_work_directory
 EOL
   else
-    mkdir "$directory_git"
+    touch "$directory_git"
     echo "El directorio '$directory_git' se creó correctamente"
     echo
     cat <<EOL >> "$directory_git"
