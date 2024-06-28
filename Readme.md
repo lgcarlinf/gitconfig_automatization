@@ -10,7 +10,12 @@ Clone este repositorio en el directorio deseado:
 git clone <URL_del_repositorio>
 cd <nombre_del_directorio>
 ```
-2. **Dar Permiso de Ejecución**
+
+> [!NOTE]   
+> Estos comandos pueden ejecutarse en Unix/Linux, macOS y Windows utilizando Git Bash.
+
+
+1. **Dar Permiso de Ejecución**
 
 Antes de ejecutar el script, asegúrese de dar permisos de ejecución al archivo setup.sh:
 
